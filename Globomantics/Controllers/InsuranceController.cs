@@ -27,16 +27,7 @@ namespace Globomantics.Controllers
         [HttpPost]
         public IActionResult Index(Contact contact)
         {
-            if (ModelState.IsValid)
-            {
-                // Todo: Send contact message
-                return RedirectToAction("Confirmation");
-            }
-            else
-            {
-                logger.LogInformation("Bad model", contact);
-                return View(contact);
-            }
+            return RedirectToAction("Confirmation");
         }
 
         public IActionResult Confirmation()

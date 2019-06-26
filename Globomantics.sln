@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Globomantics", "Globomantic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Globomantics.Services", "Globomantics.Services\Globomantics.Services.csproj", "{02ACB590-EDBF-4D38-8F75-BAC1AD3F559C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Globomantics.Core", "Globomantics.Core\Globomantics.Core.csproj", "{5530CFA3-CC09-4523-81B3-AD42A59A4DCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Globomantics.Core", "Globomantics.Core\Globomantics.Core.csproj", "{5530CFA3-CC09-4523-81B3-AD42A59A4DCF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

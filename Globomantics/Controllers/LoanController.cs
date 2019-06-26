@@ -1,23 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+using Globomantics.Filters;
 using Microsoft.AspNetCore.Mvc;
 using Globomantics.Models;
 using Globomantics.Services;
-using Microsoft.AspNetCore.Session;
-using Microsoft.AspNetCore.Http;
 
 namespace Globomantics.Controllers
 {
+    [TypeFilter(typeof(FeatureAuthFilter), Arguments = new object[] { "Loan" })]
     public class LoanController : Controller
     {
-        private ILoanService loanService;
+        private readonly ILoanService _loanService;
 
         public LoanController(ILoanService loanService)
         {
-            this.loanService = loanService;
+            this._loanService = loanService;
         }
 
         public IActionResult Application()
@@ -30,7 +26,7 @@ namespace Globomantics.Controllers
         {
             if (ModelState.IsValid)
             {
-                loanService.CreateLoanApplication(app, Guid.NewGuid().ToString());
+                _loanService.CreateLoanApplication(app, Guid.NewGuid().ToString());
                 return RedirectToAction("Employment");
             }
 
@@ -46,13 +42,8 @@ namespace Globomantics.Controllers
         [HttpPost]
         public IActionResult Employment(Employment employment)
         {
-            if (ModelState.IsValid)
-            {
-                loanService.UpdateLoanEmployment(employment);
-                return RedirectToAction("Personal");
-            }
-
-            return View(employment);
+            _loanService.UpdateLoanEmployment(employment);
+            return RedirectToAction("Personal");
         }
 
         [HttpGet]
@@ -64,19 +55,14 @@ namespace Globomantics.Controllers
         [HttpPost]
         public IActionResult Personal(Person person)
         {
-            if (ModelState.IsValid)
-            {
-                loanService.UpdateLoanPersonalInfo(person);
-                return RedirectToAction("Confirmation");
-            }
-
-            return View(person);
+            _loanService.UpdateLoanPersonalInfo(person);
+            return RedirectToAction("Confirmation");
         }
 
         [HttpGet]
         public IActionResult Confirmation()
         {
-            var loan = loanService.GetConfirmationDetails();
+            var loan = _loanService.GetConfirmationDetails();
             return View(loan);
         }
 
