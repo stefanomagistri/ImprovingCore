@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Globomantics.Controllers
 {
+    
     public class AutoController : Controller
     {
         private ILogger<AutoController> logger;
@@ -20,7 +21,11 @@ namespace Globomantics.Controllers
             this.logger = logger;
             this.quoteService = quoteService;
         }
-         
+
+        public IActionResult Index()
+        {
+            return View();
+        }
 
         public IActionResult Quote()
         {

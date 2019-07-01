@@ -15,7 +15,7 @@ namespace Globomantics.TagHelpers
 
         public string BackgroundColor { get; set; }
 
-        public override void Process(TagHelperContext context,
+        public override void Process(TagHelperContext context, 
             TagHelperOutput output)
         {
             output.Content.SetHtmlContent(

@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc.Filters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Threading.Tasks;
 
 namespace Globomantics.Filters
@@ -17,7 +16,7 @@ namespace Globomantics.Filters
 
         public void OnActionExecuting(ActionExecutingContext context)
         {
-            if(!context.ModelState.IsValid)
+            if (!context.ModelState.IsValid)
             {
                 context.Result = new ViewResult()
                 {

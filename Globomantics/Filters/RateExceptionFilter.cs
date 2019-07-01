@@ -7,13 +7,24 @@ using System.Threading.Tasks;
 
 namespace Globomantics.Filters
 {
-    public class RateExceptionFilter : Attribute, IExceptionFilter
+    public class RateExceptionFilter : ExceptionFilterAttribute, IResourceFilter
     {
-        public void OnException(ExceptionContext context)
+        public override void OnException(ExceptionContext context)
         {
-            // Log exception
-            
-            context.Result = new StatusCodeResult(504);
+            if(context.Exception is TimeoutException)
+            {
+                context.Result = new StatusCodeResult(504);
+            }
+        }
+
+        public void OnResourceExecuted(ResourceExecutedContext context)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void OnResourceExecuting(ResourceExecutingContext context)
+        {
+            throw new NotImplementedException();
         }
     }
 }

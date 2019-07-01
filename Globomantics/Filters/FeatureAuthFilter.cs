@@ -10,18 +10,18 @@ namespace Globomantics.Filters
 {
     public class FeatureAuthFilter : IAuthorizationFilter
     {
-        private readonly IFeatureService _featureService;
-        private readonly string _featureName;
+        private IFeatureService featureService;
+        private string featureName;
 
         public FeatureAuthFilter(IFeatureService featureService, string featureName)
         {
-            this._featureService = featureService;
-            _featureName = featureName;
+            this.featureService = featureService;
+            this.featureName = featureName;
         }
 
         public void OnAuthorization(AuthorizationFilterContext context)
         {
-            if (!_featureService.IsFeatureActive(_featureName))
+            if (!featureService.IsFeatureActive(featureName))
             {
                 context.Result = new RedirectToActionResult("Index", "Home", null);
             }

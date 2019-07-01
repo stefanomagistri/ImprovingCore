@@ -19,7 +19,7 @@ namespace Globomantics
 
         public CDTermLength TermLength { get; set; }
 
-        private readonly IRateService rateService;
+        private IRateService rateService;
 
         public CDRateTagHelper(IRateService rateService)
         {
