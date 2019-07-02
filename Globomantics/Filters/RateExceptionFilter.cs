@@ -11,7 +11,7 @@ namespace Globomantics.Filters
     {
         public override void OnException(ExceptionContext context)
         {
-            if(context.Exception is TimeoutException)
+            if (context.Exception is TimeoutException)
             {
                 context.Result = new StatusCodeResult(504);
             }
@@ -19,12 +19,12 @@ namespace Globomantics.Filters
 
         public void OnResourceExecuted(ResourceExecutedContext context)
         {
-            throw new NotImplementedException();
+            // throw new NotImplementedException();
         }
 
         public void OnResourceExecuting(ResourceExecutingContext context)
         {
-            throw new NotImplementedException();
+            // throw new NotImplementedException();
         }
     }
 }

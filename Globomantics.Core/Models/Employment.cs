@@ -10,13 +10,10 @@ namespace Globomantics.Models
     {
         [Required(ErrorMessage = "Current employment type required")]
         public string CurrentType { get; set; }
-
         [Required(ErrorMessage = "Current employer required")]
         public string CurrentEmployerName { get; set; }
-
         [Required(ErrorMessage = "Current annual income required")]
         public double? CurrentAnnualIncome { get; set; }
-
         [Required(ErrorMessage = "Current employment duration required")]
         public double? CurrentDuration { get; set; }
 

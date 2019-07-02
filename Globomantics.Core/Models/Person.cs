@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Globomantics.Core.Validation;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-using Globomantics.Core.Validation;
 
 namespace Globomantics.Models
 {
