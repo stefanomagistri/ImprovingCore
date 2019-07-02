@@ -14,6 +14,37 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Views\Auto\Quote.cshtml" />
+    <None Include="Views\Document\Index.cshtml" />
+    <None Include="Views\Home\carousel.cshtml" />
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Insurance\Confirmation.cshtml" />
+    <None Include="Views\Insurance\Index.cshtml" />
+    <None Include="Views\Life\Quote.cshtml" />
+    <None Include="Views\Loan\Application.cshtml" />
+    <None Include="Views\Loan\Confirmation.cshtml" />
+    <None Include="Views\Loan\Employment.cshtml" />
+    <None Include="Views\Loan\Personal.cshtml" />
+    <None Include="Views\Loan\Success.cshtml" />
+    <None Include="Views\Promotion\Index.cshtml" />
+    <None Include="Views\Property\Quote.cshtml" />
+    <None Include="Views\Rent\Quote.cshtml" />
+    <None Include="Views\Services\Index.cshtml" />
+    <None Include="Views\Shared\Components\CreditCardRates\Default.cshtml" />
+    <None Include="Views\Shared\Components\MortgageRates\Default.cshtml" />
+    <None Include="Views\Shared\Error.cshtml" />
+    <None Include="Views\Shared\LeftNav.cshtml" />
+    <None Include="Views\Shared\Nav.cshtml" />
+    <None Include="Views\Shared\Person.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <None Include="Views\Themes\Alpha\Home\Index.cshtml" />
+    <None Include="Views\Themes\Beta\Home\Index.cshtml" />
+    <None Include="Views\_ViewImports.cshtml" />
+    <None Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Globomantics.Core\Globomantics.Core.csproj" />
     <ProjectReference Include="..\Globomantics.Services\Globomantics.Services.csproj" />
   </ItemGroup>

@@ -43,12 +43,11 @@ namespace Globomantics
             services.Configure<RazorViewEngineOptions>(
                 options => options.ViewLocationExpanders.Add(new ThemeExpander())
             );
-            services.Configure<RouteOptions>(
-                options =>
-                {
-                    options.ConstraintMap.Add("tokenCheck", typeof(TokenConstraint));
-                    options.ConstraintMap.Add("versionCheck", typeof(VersionConstraint));
-                });
+            services.Configure<RouteOptions>(options =>
+            {
+                options.ConstraintMap.Add("tokenCheck", typeof(TokenConstraint));
+                options.ConstraintMap.Add("versionCheck", typeof(VersionConstraint));
+            });
 
             services.AddDistributedMemoryCache();
             services.AddSession(options =>
